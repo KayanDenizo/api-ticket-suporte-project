@@ -43,7 +43,8 @@ Baseado no plano do Notion:
 │   └── tickets.json
 ├── package.json
 └── README.md
-🔧 Como rodar
+```
+## 🔧 Como rodar
 Clone o repositório
 
 bash
@@ -62,7 +63,7 @@ npm run dev
 Acesse a API em
 http://localhost:3333 (ou a porta que você configurou)
 
-🧪 Endpoints da API
+## 🧪 Endpoints da API
 Método	Rota	Descrição
 POST	/tickets	Criar um novo ticket
 GET	/tickets	Listar todos os tickets abertos
@@ -71,7 +72,7 @@ DELETE	/tickets/:id	Excluir um ticket (se aplicável)
 
 Obs: você pode ajustar esses nomes de rota conforme a implementação real que estiver seguindo no Notion.
 
-🧠 Modelagem de Ticket
+## 🧠 Modelagem de Ticket
 js
 Copiar código
 {
@@ -83,7 +84,7 @@ Copiar código
   "createdAt": "timestamp",
   "assignedTo": "string (nome do técnico)"
 }
-🚀 O que planejo desenvolver a seguir
+## 🚀 O que planejo desenvolver a seguir
 Testes unitários e de integração
 
 Validação mais robusta com bibliotecas como Zod
@@ -94,7 +95,7 @@ WebSockets para notificações em tempo real
 
 Documentação da API com Swagger / OpenAPI
 
-👥 Contribuição
+## 👥 Contribuição
 Contribuições são super bem-vindas!
 Se quiser ajudar:
 
