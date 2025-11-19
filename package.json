@@ -2,16 +2,16 @@
   "name": "api-ticket-suporte",
   "version": "1.0.0",
   "description": "API de gerenciamento de tickets de suporte.",
-  "main": "index.js",
+  "main": "src/server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch src/server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KayanDenizo/api-ticket-suporte-project.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Kayan Denizo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/KayanDenizo/api-ticket-suporte-project/issues"
