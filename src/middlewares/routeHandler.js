@@ -8,7 +8,11 @@ export function routeHandler(request, response) {
         return route.method === request.method && route.path.test(request.url)
     })
     if (route) {
-        return route.controller({ request, response, database }) // passa o request, response e o banco de dados para o controller
+        const routeParams = request.url.match(route.path)
+
+        const { query } = routeParams.groups
+        console.log(query)
+        return route.controller({ request, response, database })
     }
 
     return response.writeHead(404).end()

@@ -8,7 +8,7 @@ export function create({ request, response, database}) {
         equipment, 
         description, 
         user_name, // nome do usuario que esta abrindo o ticket
-        status: "open",
+        status: "closed",
         created_at: new Date(), // data de criacao do ticket
         updated_at: new Date(), // data de atualizacao do ticket
     }
