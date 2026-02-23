@@ -29,4 +29,9 @@ export class DataBase {
         this.#persist()
 
     }
+
+    select(table) {
+        let data = this.#database[table] ?? []
+        return data
+    }
 }
