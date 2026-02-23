@@ -1,1 +1,13 @@
-{}
+{
+    "tickets": [
+        {
+            "id": "ed0db252-b259-4179-aebe-f527bfc471b8",
+            "equipment": "Computador",
+            "description": "Computador nao liga",
+            "user_name": "Kayan Denizo",
+            "status": "open",
+            "created_at": "2026-02-23T21:22:36.261Z",
+            "updated_at": "2026-02-23T21:22:36.261Z"
+        }
+    ]
+}
