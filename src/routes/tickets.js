@@ -11,6 +11,7 @@ export const tickets = [
         method: "GET",
         path: "/tickets",
         controller: index,
+        // Eu acho que tem que adicionar o status aq, mas n sei
     },
     
 ]
