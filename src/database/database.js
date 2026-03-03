@@ -5,7 +5,7 @@ const DATABASE_PATH = new URL("db.json", import.meta.url) // caminho do arquivo 
 export class DataBase {
     #database = {} // banco de dados em memoria (privado)
 
-    constructor() {
+    constructor() { // construtor do banco de dados
         fs.readFile(DATABASE_PATH, "utf-8")
             .then((data) => {
                 this.#database = JSON.parse(data) // de texto para json
@@ -15,11 +15,11 @@ export class DataBase {
             })
     }
 
-    #persist() {
+    #persist() { // persiste o banco de dados
         fs.writeFile(DATABASE_PATH, JSON.stringify(this.#database)) // escreve o banco de dados em memoria no arquivo de banco de dados (ele cria o arquivo db.json caso nao tenha, por isso esta se usando o persist)
     }
 
-    insert(table, data) {
+    insert(table, data) { // insere um registro no banco de dados
         if (Array.isArray(this.#database[table])) {
             this.#database[table].push(data)
         } else {
@@ -30,7 +30,7 @@ export class DataBase {
 
     }
 
-    select(table, filters) {
+    select(table, filters) { // seleciona os registros com os filtros
         let data = this.#database[table] ?? []
 
         if (filters) {
@@ -58,4 +58,14 @@ export class DataBase {
         }
 
     }
+
+    delete(table, id) {
+        const rowIndex = this.#database[table].findIndex((row) => row.id === id) // encontra o index do id
+
+        if (rowIndex > -1) { // se o rowIndex for maior que -1, significa que o id foi encontrado
+            this.#database[table].splice(rowIndex, 1) // remove o id
+            this.#persist() // persiste o banco de dados
+        }
+
+    } // remove o registro com o id
 }
