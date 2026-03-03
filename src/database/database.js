@@ -44,4 +44,18 @@ export class DataBase {
 
         return data
     }
+
+    update(table, id, data) { // atualiza o registro com o id
+        const rowIndex = this.#database[table].findIndex((row) => row.id === id) // encontra o index do id
+
+        if (rowIndex > -1) { // se o rowIndex for maior que -1, significa que o id foi encontrado
+            this.#database[table][rowIndex] = { // atualiza o rowIndex com os novos dados
+                ...this.#database[table][rowIndex], // mantem o que ja existia
+                ...data // atualiza com os novos dados
+            }
+
+            this.#persist()
+        }
+
+    }
 }
